@@ -1,5 +1,5 @@
-def extract_data_after_jpeg(image_path):
-    with open(image_path, 'rb') as f:
+def extract_data_after_jpeg(path_to_image):
+    with open(path_to_image, 'rb') as f:
         content = f.read()
 
     # Find the end of jpeg image denoted by FF D9 in hexadecimal
@@ -11,5 +11,4 @@ def extract_data_after_jpeg(image_path):
         data_after_eof = content[position:]
         return data_after_eof.decode('utf-8')
     else:
-        print("No EOF found in the file.")
         return None
