@@ -5,6 +5,11 @@ description = ""
 authors = ["Kaspar J. Pärtel <kasparjohannes@gmail.com>"]
 readme = "README.md"
 
+packages = [{ include = "inspector_image" }]
+
+[tool.poetry.scripts]
+image = "inspector_image.cli:main"
+
 [tool.poetry.dependencies]
 python = "^3.8"
 pillow = "^10.1.0"

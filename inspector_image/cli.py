@@ -1,6 +1,6 @@
 import argparse
 
-from eof_stegano import extract_data_after_jpeg
+from eof_stegano import extract_data_after_eof
 from exif import get_gps
 
 CLI_FLAGS = ["-map", "-steg"]
@@ -27,7 +27,7 @@ def get_flag(args):
         return [None, None]
 
 
-def main():
+def app():
     parser = init_parser(CLI_FLAGS, PARSER_DESCRIPTION)
     args = parser.parse_args()
     full_flag = get_flag(args)
@@ -35,9 +35,10 @@ def main():
     flag_value = full_flag[1]
 
     if flag == "-steg":
-        data = extract_data_after_jpeg(flag_value)
+        data = extract_data_after_eof(flag_value)
+
         if data is not None:
-            print(data)
+            print(data.split("Enter")[1].strip())
         else:
             print("No EOF found in the file.")
 
@@ -50,5 +51,5 @@ def main():
             print("GPS data is not present in image")
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    app()

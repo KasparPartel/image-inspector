@@ -1,4 +1,4 @@
-def extract_data_after_jpeg(path_to_image):
+def extract_data_after_eof(path_to_image):
     with open(path_to_image, 'rb') as f:
         content = f.read()
 
@@ -6,8 +6,8 @@ def extract_data_after_jpeg(path_to_image):
     EOF = b'\xFF\xD9'
     position = content.find(EOF)
 
-    if position != -1:  # FF D9 found in the file
-        position += len(EOF)  # Skip past FF D9
+    if position != -1:
+        position += len(EOF)
         data_after_eof = content[position:]
         return data_after_eof.decode('utf-8')
     else:
