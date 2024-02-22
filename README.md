@@ -1,10 +1,3 @@
-# Inspector-Image
-**by Kaspar Johannes Pärtel**
-
-> Project: [https://github.com/01-edu/public/blob/master/subjects/cybersecurity/inspector-image/README.md](https://github.com/01-edu/public/blob/master/subjects/cybersecurity/inspector-image/README.md)
-
-> Audit: [https://github.com/01-edu/public/tree/master/subjects/cybersecurity/inspector-image/audit](https://github.com/01-edu/public/tree/master/subjects/cybersecurity/inspector-image/audit)
-
 ## Introduction
 Inspector-image is a steganography decoding program. It finds the hidden data using End-of-File (EoF) method to extract all the data from the image and finds the latitude and longitude from exif tags. 
 
